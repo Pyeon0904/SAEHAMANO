@@ -1,0 +1,191 @@
+/*210415 23:33 조한결*/
+
+@charset "UTF-8";
+
+div,session,header,aside, footer{padding:10px;}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arita-buri-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*로고 이미지*/
+	.logo {
+		margin: 0px;
+		position: absolute;
+		top: 10px;
+		left: 230px;
+		width: 130px;
+		display: inline-block;
+	}
+	
+	
+/*메뉴바*/
+	.menu {
+		position: absolute;
+		left: 800px;
+		top: 10px;
+		marign: 50px;
+		width: 600px;
+		display: inline-block;
+	}
+	
+	
+	.menu:hover {
+		background-color: white;
+	}
+
+	/*메인 탭*/	
+		.maintab {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		/*메인탭 박스?틀? 설정*/
+		.maintab li {
+			float: left;
+			width: 150px;
+			position: relative;
+			padding: 0;
+			line-height: 25px;
+		}
+		/*글자 관련 설정*/
+		.maintab li a {
+			display: block;
+			font-family: 'GmarketSansLight';
+			font-weight: 600;
+			font-size: 16px;
+			padding: 10px 20px;
+			color: #704214;
+			text-decoration: none;
+		}
+	
+	/*세부 탭*/
+		/*세부 탭 기본 설정*/
+		.detailtab {
+			position: absolute;
+			left: 0px;
+			width: 200px;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			display:none;
+		}
+		
+		/*배경색 지정*/
+		.detailtab li {
+			background-color: white;
+		}
+		
+		
+		/*세부 탭 마우스 반응*/
+		.detailtab li a:hover {
+			color: #704214;
+			background-color:white;
+		}
+		
+/*---------------index 영역----------------*/
+
+	
+	/*메인에 보여지는 세부페이지 틀 설정*/	
+		/*메인 - 세부페이지 박스들 div 태그*/
+		.home {
+			font-family: 'GmarketSansLight';
+			margin: 180px 300px;
+			padding:10px;
+			position:relative;
+			
+		}
+	
+	/*소개 세부페이지 링크*/
+	#introdetail{
+		font-size:13.5pt;
+		width:160px;
+		position:absolute;
+		left:800px;
+		display: inline-block;
+	}
+	
+/*행사일정 div*/
+	/*행사 세부 페이지 링크*/
+	#eventdetaillink{
+		font-size:13.5pt;
+		width:160px;
+		position:absolute;
+		left:800px;
+		display: inline-block;	
+	}
+	
+	/*행사일정 이미지 박스 4개*/
+	#eventschedule div{
+		width:170px;
+		height:500px;
+		float:left;
+		overflow:hidden;
+	}
+	
+	
+/*커뮤니티 영역 크기 지정*/
+	#community{
+		height:450px;
+		width:800px;
+		
+	}
+	
+	/*후기 q&a 배경 설정*/
+	.commbox{
+		width: 300px;
+		border: 1px solid #704214;
+		padding: 10px 10px 20px 10px;
+		background-color: #fff;
+		float: left;
+	}
+	/*후기 박스 위치설정*/
+	#review{
+		position:absolute;
+		left:50px;	
+	}
+	/*질답 박스 위치설정*/
+	#qna{
+		position:absolute;
+		right:0px;	
+	}
+	
+	/*커뮤니티 이미지박스 크기 위치 설정*/
+	.commbox img{
+		align:center;
+		width:280px;
+		height:280px;
+		
+	}
+	 /*커뮤니티 세부페이지 링크 텍스트 설정*/         
+	.comtext {
+	    text-align:center ;
+	    font-size: 16px;
+	    color: #704214;
+	}
+	
+	/*메인에서 세부페이지로 이동하는 모든 링크 설정*/
+		.link {
+			text-decoration: none
+		}
+		
+			
