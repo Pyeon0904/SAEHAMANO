@@ -1,7 +1,5 @@
-/*210415 22:48 김예원 (최종수정자) */
+/*210417 13:18 김예원 (최종수정자) */
 package mvc.Intro.model.service;
-
-
 
 import static mvc.common.jdbc.JDBCTemplate.*;
 
@@ -54,11 +52,22 @@ public class NoticeService {
 		return result;
 	}
 
-	public Notice findBoardByNo(int noticeNo) {
+	public Notice findBoardByNo(int noticeNo,boolean hasRead) {
 		Notice notice = null;
 		Connection connection = getConnection();
 		
 		notice = dao.findBoardByNo(connection,noticeNo);
+		
+		if(notice != null && !hasRead) {
+			int result = dao.updateReadCount(connection, notice);
+			
+			
+			if(result > 0) {
+				commit(connection);
+			} else {
+				rollback(connection);
+			}
+		}
 		
 		close(connection);
 		

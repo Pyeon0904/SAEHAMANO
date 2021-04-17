@@ -1,4 +1,4 @@
-/*210415 22:48 김예원 (최종수정자) */
+/*210417 13:18 김예원 (최종수정자) */
 
 package mvc.Intro.model.dao;
 
@@ -157,7 +157,30 @@ public class NoticeDAO {
 		
 		return notice;
 	}
-	
+	public int updateReadCount(Connection connection, Notice notice) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query = null;
+		
+		try {
+			query = "UPDATE NOTICE SET NOTICE_VIEWS=? WHERE NOTICE_CODE=?";
+			pstmt = connection.prepareStatement(query);
+			
+			notice.setNotice_views(notice.getNotice_views() + 1);
+			
+			
+			pstmt.setInt(1, notice.getNotice_views());
+			pstmt.setInt(2, notice.getNotice_code());
+			
+			result = pstmt.executeUpdate();			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}		
+		
+		return result;
+	}
 	
 
 }
