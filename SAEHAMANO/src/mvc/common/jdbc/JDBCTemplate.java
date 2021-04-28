@@ -1,4 +1,3 @@
-// 20210411 13:57 김예원
 package mvc.common.jdbc;
 
 import java.io.FileNotFoundException;
@@ -22,6 +21,7 @@ public class JDBCTemplate {
 			prop.load(new FileReader(fileName));
 			Class.forName(prop.getProperty("db.driver"));
 			
+			// prop.getProperty("") 로 값 가져온다
 			connection = DriverManager.getConnection(
 					prop.getProperty("db.url"), 
 					prop.getProperty("db.username"), 
@@ -61,6 +61,7 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 	}
+	//connection 이 null이 아니고, 연결이 되어 있으면 close()
 	public static void close(Connection connection) {
 		try {
 			if(connection != null && !connection.isClosed()) {
@@ -70,6 +71,7 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 	}
+	//statement 가 null이 아니고, 연결이 되어 있으면 close()
 	public static void close(Statement statusment) {
 		try {
 			if(statusment != null && !statusment.isClosed()) {
@@ -79,6 +81,7 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 	}
+	//ResultSet 이 null이 아니고, 연결이 되어 있으면 close()
 	public static void close(ResultSet resultSet) {
 		try {
 			if(resultSet != null && !resultSet.isClosed()) {

@@ -1,8 +1,14 @@
 <!-- 210428(수) 15:36 김예원 (최종수정자) -->
 <!-- 최종 -->
+<%@ page import="mvc.community.qna.model.vo.Qna"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/views/common/headerDetail.jsp"%>
+
+<%
+	Qna qna = (Qna) session.getAttribute("confirmedQna");
+%>
+
 <!-- 구글 Noto 바탕체 -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap"
@@ -12,8 +18,6 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif:wght@400;700&display=swap"
 	rel="stylesheet">
 
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <!DOCTYPE html>
 <html>
@@ -204,10 +208,13 @@
 				<!---------------------------------------------------------------------------------->
 					
 					<!-- by.예원 form태그 추가/ 제목 input name 속성 추가 -->
-					<form action="<%= request.getContextPath()%>/community/qna/write" method="POST">
+					<form action="<%= request.getContextPath()%>/community/qna/update" method="POST">
+							<input type="hidden" name="qna_no" value="<%=qna.getQna_no()%>" />
+							<input type="hidden" name="rowNum" value="<%=qna.getRowNum()%>" />
+					
 							<div class="Qnatitle_area">
 							<h2>
-								<label style="color: wheat" >&nbsp;&nbsp;&emsp;제목&nbsp;&emsp; <input type="text" id="title" name ="title" maxlength="80" placeholder="최대 80자까지 입력 가능합니다."></label>
+								<label style="color: wheat" >&nbsp;&nbsp;&emsp;제목&nbsp;&emsp; <input type="text" id="title" name ="title" maxlength="80" value="<%=qna.getQna_name()%>"></label>
 							</h2>
 
 								<!-- 게시글 작성 table 구현 -->
@@ -216,24 +223,14 @@
 										<th>작성자</th>
 										<td>
 											<!-- &nbsp; : 스페이스 / &ensp; : 스페이스 / &emsp; : 큰스페이스 --> 
-											사용할 닉네임 &emsp;: <input type="text" style="width: 300px;" name="writer" placeholder="사용할 닉네임을 적어주세요." required>
+											사용할 닉네임 &emsp;: <%= qna.getQna_nickname() %>
 											<br>
-											<!-- 04.22 18:00 [type="password"로 변경] by.예원  --> 
-											사용할 비밀번호 :
-											<input type="password" style="width: 300px" name="password" placeholder="사용할 비밀번호를 적어주세요." required>
 										</td>
 									</tr>
 									<tr>
 										<th>내용</th>
 										<td><textarea name="content"
-												style="width: 650px; resize: none;"
-												placeholder=" 궁금하신 사항을 질문해 주세요.&#13;&#10;&#13;&#10;  
-												&#13;&#10 질문작성시 아래와 같은 사항을 주의해 주세요!
-												&#13;&#10; - 게시글 작성 에티켓 문화를 실천해주세요!
-												&#13;&#10; - 남을 비방하는 내용이나 저속한 표현은 예고없이 삭제됩니다.
-												&#13;&#10; - 광고성, 상업성 게시물은 예고 없이 삭제됩니다.
-												&#13;&#10; - 국보문화재 관람 후기글은 후기게시판을 이용해 주시기 바랍니다. "
-												cols="60" rows="20" style="resize: none"></textarea></td>
+												style="width: 650px" cols="60" rows="20" style="resize: none"><%= qna.getQna_content() %></textarea></td>
 									</tr>
 									<tr>
 										<th colspan="2"><input type="submit" value="등록">
