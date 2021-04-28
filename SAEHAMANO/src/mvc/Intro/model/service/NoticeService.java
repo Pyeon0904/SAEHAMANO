@@ -1,4 +1,4 @@
-/*210417 13:18 김예원 (최종수정자) */
+/*210426 10:07 김예원 (최종수정자) */
 package mvc.Intro.model.service;
 
 import static mvc.common.jdbc.JDBCTemplate.*;
@@ -18,8 +18,6 @@ public class NoticeService {
 	public int getNoticeCount() {
 		Connection connection = getConnection();
 		int count = dao.getNoticeCount(connection);
-		System.out.println(count);
-		
 		
 		return count;
 

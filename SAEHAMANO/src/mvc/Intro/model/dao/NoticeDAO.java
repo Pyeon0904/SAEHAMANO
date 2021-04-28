@@ -1,4 +1,4 @@
-/*210417 13:18 김예원 (최종수정자) */
+/*210426 10:07 김예원 (최종수정자) */
 
 package mvc.Intro.model.dao;
 
@@ -64,7 +64,6 @@ public class NoticeDAO {
 			
 			pstmt = connection.prepareStatement(query);
 			
-			// ? 값을 set하는 구문
 			pstmt.setInt(1, pageInfo.getStartList());
 			pstmt.setInt(2, pageInfo.getEndList());
 			
@@ -101,13 +100,12 @@ public class NoticeDAO {
 		String query = null;
 		
 		try {
-			query = "INSERT INTO NOTICE VALUES(SEQ_NOTICE_NO.NEXTVAL, ?, ?, ? ,?, DEFAULT, DEFAULT, DEFAULT)";
+			query = "INSERT INTO NOTICE VALUES(SEQ_NOTICE_NO.NEXTVAL, ?,  ?, ?, DEFAULT, 'Y', DEFAULT,NULL,NULL)";
 			pstmt = connection.prepareStatement(query);
 			
-			pstmt.setString(1, notice.getNotice_sort());
-			pstmt.setString(2, notice.getNotice_name());
-			pstmt.setString(3, notice.getNotice_content());
-			pstmt.setInt(4, notice.getNotice_writer_no());
+			pstmt.setString(1, notice.getNotice_name());
+			pstmt.setString(2, notice.getNotice_content());
+			pstmt.setInt(3, notice.getNotice_writer_no());
 			
 			result = pstmt.executeUpdate();				
 		} catch (SQLException e) {
@@ -125,11 +123,16 @@ public class NoticeDAO {
 		ResultSet rs = null;
 		String query = null;
 		try {
-			query = 
-					"SELECT  N.NOTICE_CODE, N.NOTICE_NAME, A.ID, N.NOTICE_VIEWS, N.NOTICE_CONTENT, N.WRITE_DATE "
-					+ "FROM NOTICE N "
-					+ "JOIN ADMIN A ON(N.NOTICE_WRITER_NO = A.NO) "
-					+ "WHERE N.STATUS = 'Y' AND N.NOTICE_CODE=?";
+			query = "SELECT RNUM, NOTICE_CODE, NOTICE_NAME, ID,  NOTICE_CONTENT, NOTICE_VIEWS,WRITE_DATE, STATUS "
+					+ "FROM ( "
+					+ "    SELECT ROWNUM AS RNUM, NOTICE_CODE, NOTICE_NAME, ID,  NOTICE_CONTENT, NOTICE_VIEWS,WRITE_DATE, STATUS "
+					+ "    FROM ( "
+					+ "        SELECT  N.NOTICE_CODE, N.NOTICE_NAME, A.ID, N.NOTICE_CONTENT, N.NOTICE_VIEWS, N.WRITE_DATE, N.STATUS "
+					+ "        FROM NOTICE N JOIN ADMIN A ON(N.NOTICE_WRITER_NO = A.NO) "
+					+ "        WHERE N.STATUS = 'Y'  ORDER BY N.NOTICE_CODE DESC "
+					+ "    ) "
+					+ ") "
+					+ "WHERE NOTICE_CODE = ?";
 			
 			pstmt = connection.prepareStatement(query);
 			
@@ -146,6 +149,7 @@ public class NoticeDAO {
 				notice.setNotice_views(rs.getInt("NOTICE_VIEWS"));
 				notice.setNotice_writer(rs.getString("ID"));
 				notice.setWrite_date(rs.getDate("WRITE_DATE"));
+				notice.setRowNum(rs.getInt("RNUM"));
 			}
 			
 		} catch (SQLException e) {

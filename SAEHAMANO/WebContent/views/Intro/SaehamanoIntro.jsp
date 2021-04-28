@@ -1,108 +1,112 @@
-<!-- 210412 24:26 김하린(최종수정자) -->
+<!--  새하마노 소개 페이지 -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@ include file="/views/common/header.jsp"%>
-<!-- 구글 Noto 바탕체 -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
-<!-- font-family:'Noto Serif', serif; -->
-<!-- 구글 Noto 굴림체 -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
-<!-- font-family: 'Noto Sans KR', sans-serif; -->
+<%@ include file="/views/common/headerDetail.jsp"%>
 
 <style>
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-/*상세페이지 타이틀 백그라운드 이미지*/
-.TopBackgroundImg {
-		width:0px auto;
-		height:220px;
-		margin-top: 200px;
-	}
-	
+/*제일 바탕 영역 설정*/
+#box{ 
+	background-color:#2a1b0a;
+	width:100%;
+	height:850px; /*높이는 각 세부페이지 컨텐츠 보고 알아서 적~당히 설정하기*/
+	margin-top:330px;
+	margin-bottom:100px;
+	margin-left:-10px;
+	padding:10px;
+}	
+/*컨텐츠 영역*/
+#conbox{
+	 position:relative;
+	 width:1000px; /*각자 컨텐츠에 맞춰서 가로사이즈 지정하세요,.*/
+	 top:0px;
+	 margin:auto;
+	 align:center;
+}
+
 /*소개 테이블 전체 영역 지정*/
-.SaehamanoIntroTable {
-  position: relative;
-  margin-top:50px;
-  margin-left:220px;
-	border:1px solid  white;
+.saehamanoIntroTable {
+	width: 1000px;
+	height:0 auto; 
+	 font-family: 'GmarketSansLight';
+	margin-top:100px;
 	}
 	
 /* 새하마노 소개 이미지 */
- .SaehamanoIntroImg {
- 		position: relative;
+ .saehamanoIntroImg {
  		width: 482px;
  		height: 549px;
  		object-fit:cover;
  }
  
  /* 새하마노 소개 제목*/
- .ShmnTitle {
- 	color: #373737;
+ .shmnTitle {
+  	color: white;
  	font-size:35px;
- 	font-family:'Noto Serif', serif;
+ 	font-family: 'GmarketSansMedium';
  }
  
  /* 새하마노 설명 영역 지정 */
  .content {
  	width: 500px;
  	height: 300px;
- 	padding-top:110px;
- 	padding-bottom:30px;
+ 	padding-top:50px;
+ 	padding-bottom:20px;
  }
 
  /* 새하마노 설명 문단 스타일 */
- .ShmnIntroContent {
- color: #4C4C4C;
-font-family: 'Noto Sans KR', sans-serif;
- text-align: justify;
+ .shmnIntroContent {
+ color: white;
  line-height: 2em;
- padding-right:30px;
- 
+ padding-right:40px;
  }
 
 /* 새하마노 뜻 문단 스타일*/
-span[class=ShmnIntroContent] {
-  font-family: 'Noto Sans KR', sans-serif;
+.shmnIntroContent span {
   font-size: 18px;
   font-weight : bold;
-  color: black;
-  float: left;
+  color: wheat;
   }
- 
 
 </style>
-<section id="ShmnIntro">
-		<img class="TopBackgroundImg" src="<%= request.getContextPath() %>/resources/images/detailbggreen.png"/>
-        <table class="SaehamanoIntroTable">
+<div id="box">
+<section id="shmnIntro">
+	<div id="conbox">
+        <table class="saehamanoIntroTable">
 	            <tr>
-	                <td><span class="ShmnTitle">새하마노<br>소개<br></span>
+	                <td><span class="shmnTitle">새하마노<br>소개<br></span>
 	                </td>
 	                <td rowspan="2">
-	                <img class="SaehamanoIntroImg" src="<%= request.getContextPath() %>/resources/images/Gyeongbokgung1.jpg" alt="새하마노소개">
+	                <img class="saehamanoIntroImg" src="<%= request.getContextPath() %>/resources/images/Gyeongbokgung1.jpg" alt="새하마노소개">
 	                </td>
 	            </tr>
             <tr>
                 <td class="content">
-                <p class="ShmnIntroContent">
-                 <span class="ShmnIntroContent">새하마노는 '동서남북'을 뜻하는 순우리말이다.<br></span>
+                <p class="shmnIntroContent">
                  <br><br>
-                (제작의도) 나라의 말이 중국과 달라 한문·한자와 서로 통하지 아니하므로
-                이런 까닭으로 어리석은 백성이 이르고자 하는 바가 있어도
-                끝내 제 뜻을 능히 펴지 못하는 사람이 많다.
-                내가 이를 위해 불쌍히 여겨 새로 스물여덟 글자를 만드니
-                사람마다 하여금 쉬이 익혀 날마다 씀에 편안케 하고자 할 따름이다.
+                &nbsp;&nbsp;<span>새하마노</span>는 ‘동, 서, 남, 북에서 불어오는 바람’을 뜻하는 우리말로, 샛바람, 하늬바람, 마파람, 높바람에서 새, 하늬, 마, 높을 따와서 새하마노라 부른다.
+                <br>
+				&nbsp;&nbsp;대한민국의 문화가 늘 곁에서 부는 바람처럼 일상 속에 자연스럽게 스며들기를 바라는 취지로 ‘새하마노’ 라는 이름을 지었다.<br><br>
+				<span>&nbsp;&nbsp;"역사를 잊은 민족에게 미래는 없다"</span><br>&nbsp;&nbsp;대한민국의 역사와 문화재를 쉽고 부담 없이 접하여 한국 문화에 관심을 갖게 되는 발판이 되는 걸 목표로 한다.                 
                 </p>
                 </td>
             </tr>
         </table>
-    
-    <!--     새하마노 : 동풍, 서풍, 남풍, 북풍의 순 우리말이에요.
-	동서남북이 '새, 하늬, 마, 높'이고
-	거기에 바람을 붙여서
-	샛바람, 하늬바람, 마파람, 높바람이라 부르죠. -->
-	
-
+	</div>
 </section>
-
-<!-- <%@ include file="/views/common/footer.jsp"%> -->
+</div>
+<%@ include file="/views/common/footer.jsp"%>
