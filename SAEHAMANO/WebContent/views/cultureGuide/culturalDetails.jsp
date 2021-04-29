@@ -1,5 +1,6 @@
 <!-- 210427 23:17 김하린 (최종수정자) -->
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="mvc.cultureGuide.model.vo.Culture"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

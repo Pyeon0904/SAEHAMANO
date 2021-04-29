@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import mvc.cultureGuide.model.service.CultureService;
 import mvc.cultureGuide.model.vo.Culture;
-
+  
 
 @WebServlet("/curtural/details")
 public class culturalDetailsServlet extends HttpServlet {
