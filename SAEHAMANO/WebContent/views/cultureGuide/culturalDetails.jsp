@@ -1,5 +1,6 @@
 <!-- 210427 23:17 김하린 (최종수정자) -->
 
+<%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="mvc.cultureGuide.model.vo.Culture"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -146,7 +147,7 @@ div.fotorama {float:left;	margin:0 auto;}
 					<% }else{ %>
 							<span> - </span><br>
 					<% } %>
-					<%{ 
+					<%
 			//start_date 형변환
 		String deg_date = culture.getDeg_date();
 		SimpleDateFormat dfFormat = new SimpleDateFormat("yyyyMMdd");
