@@ -28,18 +28,20 @@
 
 #bg{
 	padding:0px;
-	background-image:url(<%=request.getContextPath()%>/resources/images/mainbg.png);
+	background-image:url(<%=request.getContextPath()%>/resources/images/backgroundcircle-dark.png);
 	overflow-x:hidden;
 	z-index:0;	
 }
 
 
+
+
 	.logo {
 		margin: 0px;
 		position: absolute;
-		top: 30px;
-		left:42%;
-		width: 300px;
+		top: 15px;
+		left:5.5%;
+		width: 90px;
 		display: inline-block;
 		z-index:1;
 	}
@@ -49,16 +51,16 @@
 /*메뉴바*/
 	.menu {
 		position: absolute;
-		left:37%;
-		top: 360px;
+		right:0%;
+		top: 20px;
 		margin:0px;
 		width: 600px;
 		height:45px;
-		
 	}
 	
 	/*마우스 on*/
 	.col:hover{	background-color:#2a1b0a; position:relative; width:600px; height:180px;	}
+	
 	
 	/*하위 메뉴 구분하기*/
 	.semititle{ 
@@ -70,7 +72,6 @@
 			color:white;
 			text-decoration: none;
 	}
-	
 
 	/*메인 탭*/	
 		.maintab {
@@ -82,10 +83,12 @@
 			margin: 0;
 		}
 		
+		
+		
 		/*메인탭 박스?틀? 설정*/
 		.maintab li {
 			float: left;
-			width: 120px;
+			width: 150px;
 			position: relative;
 			padding: 0;
 			line-height: 25px;
@@ -97,7 +100,7 @@
 			display: block;
 			font-family: 'GmarketSansMedium';
 			font-size: 16px;
-			padding: 10px;
+			padding: 10px 20px;
 			color:#948c84;
 			text-decoration: none;
 		}
@@ -116,19 +119,6 @@
 			display:none;
 		}
 		
-		
-		/*배경색 지정*/
-		.detailtab li {
-		/*	background-color: white;	*/	
-		}
-		
-		
-		/*세부 탭 마우스 반응*/
-		.detailtab li a:hover {
-		/*	background-color:white;*/
-			
-			
-		}
 		
 
 		
@@ -153,7 +143,7 @@
 	
 		
 		<a href="<%= request.getContextPath() %>/"> <img class="logo"
-			src="<%=request.getContextPath() %>/resources/images/logocircle.png" />
+			src="<%=request.getContextPath() %>/resources/images/golo-logo.png" />
 		</a>
 		
 		
@@ -190,3 +180,4 @@
 		</div>
 
 	</header>
+	
