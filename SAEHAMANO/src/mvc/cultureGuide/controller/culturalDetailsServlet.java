@@ -21,7 +21,7 @@ public class culturalDetailsServlet extends HttpServlet {
     public culturalDetailsServlet() {
 
     }
-
+//
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	Culture culture = null;

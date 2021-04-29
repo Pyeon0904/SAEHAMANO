@@ -68,7 +68,7 @@ public class culturalListServlet extends HttpServlet {
         	pageInfo = new PageInfo(page,10,listCount,10);
         	
         	list = service.getSearchList(regionList, categoryList,pageInfo);
-    		
+    	//	
     	}else {
 
     	listCount = service.getCultureCount();

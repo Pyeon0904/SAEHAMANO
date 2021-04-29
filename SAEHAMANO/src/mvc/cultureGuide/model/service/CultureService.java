@@ -51,7 +51,7 @@ public class CultureService {
 		
 		return list;
 	}
-
+//
 	public int getRLCount(String regionList) {
 		Connection connection = getConnection();
 		

@@ -196,7 +196,7 @@ div#no-result {text-align:center;}
       </div> 
       <% } else{
     	  for(Culture culture : list){
-    	  
+    	  //
     	%>
       
  <!--  문화재 조회시 목록  -->

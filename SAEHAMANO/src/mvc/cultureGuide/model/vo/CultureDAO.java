@@ -204,7 +204,7 @@ public class CultureDAO {
 		
 		return count;
 	}
-
+//
 	public int getCLCount(Connection connection, String categoryList) {
 		int count = 0;
 		PreparedStatement pstmt = null;

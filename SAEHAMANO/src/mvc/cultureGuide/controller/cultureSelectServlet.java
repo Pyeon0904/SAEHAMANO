@@ -15,7 +15,7 @@ public class cultureSelectServlet extends HttpServlet {
     public cultureSelectServlet() {
 
     }
-
+//
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	String sPath=request.getContextPath();
