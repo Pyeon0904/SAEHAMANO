@@ -48,7 +48,7 @@ public class NoticeBoardViewServlet extends HttpServlet {
 
     					hasRead = true;
     					
-    					break;
+    					break;  
     				}
     			}
     		}    		
