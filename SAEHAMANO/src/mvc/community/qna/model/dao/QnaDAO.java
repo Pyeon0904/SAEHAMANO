@@ -97,14 +97,14 @@ public class QnaDAO {
 		String query = null;
 		
 		try {
-			query = "INSERT INTO QNA VALUES(SEQ_QNA_NO.NEXTVAL,?,?,?,?,?,DEFAULT,DEFAULT,DEFAULT)";
+			query = "INSERT INTO QNA VALUES(SEQ_QNA_NO.NEXTVAL,?,?,NULL,?,?,DEFAULT,DEFAULT,DEFAULT)";
 			pstmt = connection.prepareStatement(query);
 			
 			pstmt.setInt(1, qna.getNick_sequence());
 			pstmt.setString(2, qna.getQna_sort());
-			pstmt.setInt(3, qna.getQna_notice_code());
-			pstmt.setString(4, qna.getQna_name());
-			pstmt.setString(5, qna.getQna_content());
+			
+			pstmt.setString(3, qna.getQna_name());
+			pstmt.setString(4, qna.getQna_content());
 			
 			result = pstmt.executeUpdate();				
 		} catch (SQLException e) {

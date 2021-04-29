@@ -55,7 +55,7 @@ public class communityQnaWriteServlet extends HttpServlet {
 		qna.setQna_content(content);
 		qna.setNick_sequence(nickseq);
 		qna.setQna_sort("question");
-		qna.setQna_notice_code(1);
+		
 
 		int result2 = service.save(qna);
 		
