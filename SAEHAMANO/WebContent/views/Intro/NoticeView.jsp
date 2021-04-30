@@ -147,9 +147,7 @@ text-align:right;
 			
 					<div id="btn-list">
 						<div class="btn-list">
-						<button type="button">수정</button>
-						<button type="button">삭제</button>
-						<button type="button" onclick="location.href='<%= request.getContextPath() %>/views/Intro/NoticeBoard'" >목록으로</button>
+						<button type="button" onclick="location.href='<%= request.getContextPath() %>/Intro/NoticeBoard'" >목록으로</button>
 						</div>
 					</div>
 		</form>
