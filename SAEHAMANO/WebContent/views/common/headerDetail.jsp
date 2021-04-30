@@ -1,4 +1,4 @@
-<!--210418 18:04 조한결-->
+<!--210430 18:04 조한결-->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -59,7 +59,7 @@
 	}
 	
 	/*마우스 on*/
-	.col:hover{	background-color:#2a1b0a; position:relative; width:600px; height:180px;	}
+	.col:hover{	 background-color: rgba( 42, 27, 10, 0.8 ); position:relative; width:600px; height:180px;	}
 	
 	
 	/*하위 메뉴 구분하기*/

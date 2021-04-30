@@ -1,4 +1,4 @@
-<!--210418 18:04 조한결-->
+<!--210430 18:04 조한결-->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -48,17 +48,19 @@
 	
 /*메뉴바*/
 	.menu {
+		z-index:17;
+		text-align:center;
 		position: absolute;
-		left:37%;
+		left:0%;
 		top: 360px;
-		margin:0px;
-		width: 600px;
+		margin:auto;
+		width: 100%;
 		height:45px;
 		
 	}
-	
+	.col{ position:relative; width:100%; }
 	/*마우스 on*/
-	.col:hover{	background-color:#2a1b0a; position:relative; width:600px; height:180px;	}
+	.col:hover{	 background-color: rgba( 42, 27, 10, 1 ); position:relative; width:100%; height:180px;	}
 	
 	/*하위 메뉴 구분하기*/
 	.semititle{ 
@@ -76,7 +78,7 @@
 		.maintab {
 			
 			position:relative;
-			left:0px;
+			left:37%;
 			list-style-type: none;
 			padding: 0;
 			margin: 0;
@@ -117,18 +119,6 @@
 		}
 		
 		
-		/*배경색 지정*/
-		.detailtab li {
-		/*	background-color: white;	*/	
-		}
-		
-		
-		/*세부 탭 마우스 반응*/
-		.detailtab li a:hover {
-		/*	background-color:white;*/
-			
-			
-		}
 		
 
 		
