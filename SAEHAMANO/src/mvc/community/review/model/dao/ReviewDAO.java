@@ -193,7 +193,7 @@ public class ReviewDAO {
 				
 				nickname.setNick_sequence(rs.getInt("NICK_SEQUENCE"));
 				nickname.setNickname(rs.getString("NICKNAME"));
-				nickname.setPassword(rs.getString("NICKNAME_PASSWORD"));
+				nickname.setPassword(rs.getString("PASSWORD"));
 				
 			}
 			
