@@ -379,19 +379,19 @@ opacity:1;
 			    data-loop="true"
 			>
 					<div data-img="<%=request.getContextPath()%>/resources/images/sanggwabang2.jpg">
-						<a href="<%=request.getContextPath()%>/event/viewEvent?event_no=61 " class="fes-title">
+						<a href="<%=request.getContextPath()%>/event/viewEvent?event_no=10" class="fes-title">
 						<p>경복궁 생과방 | 2021년 04월 15일 ~ 2021년 06월 30일</p></a>
 					</div>
 					<div data-img="<%=request.getContextPath()%>/resources/images/busanyeondeungfestival.jpg">
-						<a href="<%=request.getContextPath()%>/event/viewEvent?event_no=53 " class="fes-title">
+						<a href="<%=request.getContextPath()%>/event/viewEvent?event_no=2 " class="fes-title">
 						<p>2565부산연등축제 | 2021년 05월 01일 ~ 2021년 05월 16일</p></a>
 					</div>
 					<div data-img="<%=request.getContextPath()%>/resources/images/firstgarden.jpg">
-						<a href="<%=request.getContextPath()%>/event/viewEvent?event_no=57"  class="fes-title">
+						<a href="<%=request.getContextPath()%>/event/viewEvent?event_no=6"  class="fes-title">
 						<p>별빛이 흐르는 정원 2021 | 2021년 01월 01일 ~ 2021년 12월 31일</p></a>
 					</div>
 					<div data-img="<%=request.getContextPath()%>/resources/images/herbisland.jpg">
-						<a href="<%=request.getContextPath()%>/event/viewEvent?event_no=56"  class="fes-title">
+						<a href="<%=request.getContextPath()%>/event/viewEvent?event_no=5"  class="fes-title">
 						<p>불빛 동화 축제 2021 | 2021년 01월 01일 ~ 2021년 12월 31일</p></a>
 					</div>
 					
