@@ -54,7 +54,9 @@ public class communityReviewWriteServlet extends HttpServlet {
 		
 
 		
-		String path = getServletContext().getRealPath("/resources/upload/review");
+		/*String path = getServletContext().getRealPath("/resources/upload/review");*/
+		// 절대경로 추가 (reviewWrite / FileDown / reviewUpdate)
+    	String path = "C:\\upload\\review";
 		int maxSize = 10485760;
     	String encoding = "UTF-8"; 
     	MultipartRequest mr = new MultipartRequest(request, path, maxSize, encoding, new FileRename());

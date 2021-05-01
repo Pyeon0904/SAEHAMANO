@@ -31,7 +31,9 @@ public class communityReviewFileDown extends HttpServlet {
     	
     	System.out.println("oriname : " + oriname + ", rename : " + rename);
     	
-    	String path = getServletContext().getRealPath("/resources/upload/review");
+    	/*String path = getServletContext().getRealPath("/resources/upload/review"); */
+    	// 절대경로 추가 (reviewWrite / FileDown / reviewUpdate)
+    	String path = "C:\\upload\\review";
     	String file = path + "/" + rename;
     	
     	File downFile = new File(file);

@@ -1,4 +1,4 @@
-/*210417 13:18 김예원 (최종수정자) */
+/*210426 10:09 김예원 (최종수정자) */
 package mvc.Intro.controller;
 
 import java.io.IOException;
@@ -16,59 +16,58 @@ import mvc.Intro.model.vo.Notice;
 
 @WebServlet("/Intro/NoticeView")
 public class NoticeBoardViewServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
-	private NoticeService service = new NoticeService();
+   private static final long serialVersionUID = 1L;
+   
+   private NoticeService service = new NoticeService();
 
     public NoticeBoardViewServlet() {
 
     }
 
     @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Notice notice = new Notice();
-    	int noticeNo = Integer.parseInt(request.getParameter("noticeNo"));
-		
-    	Cookie[] cookies = request.getCookies();
-    	String noticeHistory = "";
-    	boolean hasRead = false;
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      Notice notice = new Notice();
+       int noticeNo = Integer.parseInt(request.getParameter("noticeNo"));
+      
+       Cookie[] cookies = request.getCookies();
+       String noticeHistory = "";
+       boolean hasRead = false;
 
-    	if(cookies != null) {
-    		String name = null;
-    		String value = null;
-    		
-    		for(Cookie cookie : cookies) {
-    			name = cookie.getName();
-    			value = cookie.getValue();
-    			
-    			if("noticeHistory".equals(name)) {
-    				noticeHistory = value;
-    				
-    				if(noticeHistory.contains("|" + noticeNo + "|")) {
+       if(cookies != null) {
+          String name = null;
+          String value = null;
+          
+          for(Cookie cookie : cookies) {
+             name = cookie.getName();
+             value = cookie.getValue();
+             
+             // boardHistory인 쿠키값을 찾기
+             if("noticeHistory".equals(name)) {
+                noticeHistory = value;
+                
+                if(noticeHistory.contains("|" + noticeNo + "|")) {
+                   // 읽은 게시글
+                   hasRead = true;
+                   
+                   break;
+                }
+             }
+          }          
+       }
+       
+       if(!hasRead) {
+          Cookie cookie = new Cookie("noticeHistory", noticeHistory + "|" + noticeNo + "|");
+          
+          cookie.setMaxAge(-1); 
+          response.addCookie(cookie);
+       }
+       
+       notice = service.findBoardByNo(noticeNo,hasRead);    
 
-    					hasRead = true;
-    					
-    					break;  
-    				}
-    			}
-    		}    		
-    	}
-    	
-    	if(!hasRead) {
-    		Cookie cookie = new Cookie("noticeHistory", noticeHistory + "|" + noticeNo + "|");
-    		
-    		cookie.setMaxAge(-1); 
-    		response.addCookie(cookie);
-    	}
-    	
-
-    	notice = service.findBoardByNo(noticeNo,hasRead);
-  
-    	
-    	request.setAttribute("notice", notice);
-		request.getRequestDispatcher("/views/Intro/NoticeView.jsp").forward(request, response);
-	}
+       request.setAttribute("notice", notice);
+      request.getRequestDispatcher("/views/Intro/NoticeView.jsp").forward(request, response);
+   }
 
 
-	
+   
 }

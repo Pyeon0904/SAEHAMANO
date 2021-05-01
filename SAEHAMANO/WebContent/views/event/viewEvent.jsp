@@ -168,7 +168,7 @@
 		            	<%}else{ %>
 		            	<%= event.getEvent_place() %>
 		            	<input type="button" value="지도보기"
-		            		onclick = "location.href ='https://map.naver.com/v5/search/<%=event.getEvent_place() %>'"/>
+		            		onclick = "window.open('https://map.naver.com/v5/search/<%=event.getEvent_place() %>')" />
 		            	<% } %>
 		            </p>
 		           	<p>
@@ -184,7 +184,7 @@
 						<% if(event.getEvent_insta() != null){ %>
 						<a href="<%= event.getEvent_insta() %>">인스타그램</a>
 						<%} if(event.getEvent_home() != null){ %>
-						<a href="<%= event.getEvent_home()%>">홈페이지</a>
+						<a href="<%= event.getEvent_home()%>" target="_blank">홈페이지</a>
 						<%}  %>
 					</p>	
 					
@@ -192,8 +192,6 @@
 						<%= event.getEvent_content() %>
 						</p> 	
 		</div>
-		
-		
 		<div id="back">
 				<a href="<%= request.getContextPath() %>/event/eventschedule">목록으로</a>
 		</div>

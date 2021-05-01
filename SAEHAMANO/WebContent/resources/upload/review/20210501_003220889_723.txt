@@ -1,0 +1,87 @@
+210422 (목) 작업량
+
+1. <select> <option> 답변 받고 수정
+o js link 중첩문제 해결
+
+2. 예원이와 qna / review 통신
+o communityQna.jsp 
+o communityReview.jsp
+o
+
+3. 헤더 푸터 헤더디테일 적용  + 배치 디자인 통일
+-> 각페이지 배치 조정
+1. conbox로 콘텐츠 묶기
+----------------------------------------
+210424 (토) 작업량
+
+1. 헤더디테일 푸터 적용 + 배치 디자인 통일
+o communityMain
+o communityReview
+o reviewWrite
+o reviewView
+o communityQna
+o QnaWrite
+o qnaView
+
+<통일>
+class="pageName"
+class="pageExplain"
+
+2. SAEHAMANO_MANAGE
+- master 구축! -> 초대
+
+----------------------------------
+210425 (일) 작업량
+1. SAEHAMANO_MANAGE
+- master 구축! (코드) -> 초대
+
++ reviewView 버튼처럼 qnaView 버튼 수정 
++ communityMain 버튼 수정!
+--> 경로지정
+---------------------------------
+210426(월) 작업량
+1. 준장 - 예원 코드 합치기
+2. 코드 총합
+마지막. master 구현
+
+<동시간대 진행할 것>
+[1] 
+준장 - 예원
+(프론트, 백 모든 코드 합치기)
+
+한결 - 재용 
+(코드 합치기)
+
+한결 - HOME 지도 강사님Q&A
+(1교시 시작하자마자!)
+
+하린 - 페이지 관련 라이브러리 찾기
+(찾기 어려우면 강사님Q&A 찬스!)
+
+[2] 
+하린 - 예원
+(프론트, 백 모든 코드 합치기)
+
+준장 - Event 쪽 코드 가져오기
+(한결-재용 완료되는대로)
+
+재용 - Event 서블릿 작업
+
+한결 - HOME 지도 작업
+
+[3]
+준장 - Intro 및 culture 코드 가져오기
+(하린 - 예원 완료되는대로)
+
+예원 - community 백 작업 계속
+
+재용 - Event 서블릿 작업
+
+한결 - HOME 지도 작업
+
+하린 - 페이지넘기는 라이브러리 작업
+
+[4]
+준장 - 전체 코드 병합 완료 뒤
+SAEHAMANO_MANAGE pull & 깃 공유
+

@@ -16,35 +16,35 @@ import mvc.Intro.model.vo.Notice;
 
 @WebServlet("/Intro/NoticeBoard")
 public class NoticeBoardListServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
-	private NoticeService service = new NoticeService();
+   private static final long serialVersionUID = 1L;
+   
+   private NoticeService service = new NoticeService();
 
     public NoticeBoardListServlet() {
 
     }
 
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int page = 0;
-		int listCount=0;
-		PageInfo pageInfo = null;
-		List<Notice> list = null;
-		
-		try{
-			page = Integer.parseInt(request.getParameter("page"));
-		} catch(NumberFormatException e) {
-			page = 1;
-		}
-		
-		listCount = service.getNoticeCount();
-		
-		
-		pageInfo = new PageInfo(page,10,listCount,10);
-		list = service.getNoticeList(pageInfo);
-				
-		request.setAttribute("list",list);
-		request.setAttribute("pageInfo", pageInfo);
-		request.getRequestDispatcher("/views/Intro/NoticeBoard.jsp").forward(request, response);
-	}
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      int page = 0;
+      int listCount=0;
+      PageInfo pageInfo = null;
+      List<Notice> list = null;
+      
+      try{
+         page = Integer.parseInt(request.getParameter("page"));
+      } catch(NumberFormatException e) {
+         page = 1;
+      }
+      
+      listCount = service.getNoticeCount();
+      
+      
+      pageInfo = new PageInfo(page,10,listCount,10);
+      list = service.getNoticeList(pageInfo);
+            
+      request.setAttribute("list",list);
+      request.setAttribute("pageInfo", pageInfo);
+      request.getRequestDispatcher("/views/Intro/NoticeBoard.jsp").forward(request, response);
+   }
 }

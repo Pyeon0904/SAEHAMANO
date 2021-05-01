@@ -1,9 +1,9 @@
-<!-- 210430 조한결 -->
+<!-- 210501 이재용 -->
+<%@page import="mvc.cultureGuide.model.vo.Culture"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 <%@ include file = "/views/common/header.jsp"%>
-
 
 <!-- jQuery 1.8 or later, 33 KB -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -255,62 +255,63 @@ opacity:1;
 			</div>
 			
 			
-			
-			
+
 			<div style="clear:both; position: relative; z-index: 1; top: -35px; left: 25; ">
 				
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=전라남도&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h061.gif" alt='' border='0' name='jeonS' class='hlist1 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=전라북도&categoryList=" >
 				<img src='<%=request.getContextPath()%>/resources/images/map/h063.gif' alt='' border='0' name='jeonN' class='hlist2 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=경상남도&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h055.gif" alt='' border='0' name='gyeongS' class='hlist3 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=강원도&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h033.gif" alt='' border='0' name='gangwon' class='hlist4 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=충청남도&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h041.gif" alt='' border='0' name='choongS' class='hlist5 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=경기도&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h031.gif" alt='' border='0' name='gyeonggi' class='hlist6 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=충청북도&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h043.gif" alt='' border='0' name='choongN' class='hlist7 hover' ></a>
 				
-				<a href="#" >
-				<img src="<%=request.getContextPath()%>/resources/images/map/h054.gif" alt='' border='0' name='gyeongN' class='hlist8 hover' >
-				<img src="<%=request.getContextPath()%>/resources/images/map/hwd.gif" alt='' border='0' name='gyeongN' class='hlist8wd hover' ></a>
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=경상북도&categoryList=" >
+				<img src="<%=request.getContextPath()%>/resources/images/map/h054.gif" alt='' border='0' name='gyeongN' class='hlist8 hover' ></a>
+				<img src="<%=request.getContextPath()%>/resources/images/map/hwd.gif" alt='' border='0' name='gyeongN' class='hlist8wd hover' >
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=제주도&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h064.gif" alt='' border='0' name='jeju' class='hlist9 hover' ></a>
 				
-				<a href="#" >
+				
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=서울특별시&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h02.gif" alt='' border='0' name='seoul' class='hlist10 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=인천광역시&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h032.gif" alt='' border='0' name='incheon' class='hlist11 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=대전광역시&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h042.gif" alt='' border='0' name='daejeon' class='hlist12 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=광주광역시&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h062.gif" alt='' border='0' name='gwangju' class='hlist13 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=대구광역시&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h053.gif" alt='' border='0' name='daegu' class='hlist14 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=울산광역시&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h052.gif" alt='' border='0' name='woolsan' class='hlist15 hover' ></a>
 				
-				<a href="#" >
+				<a href="<%= request.getContextPath() %>/cultural/list?regionList=부산광역시&categoryList=" >
 				<img src="<%=request.getContextPath()%>/resources/images/map/h051.gif" alt='' border='0' name='busan' class='hlist16 hover' ></a>       
 				
-			
 			</div>
+
+			
 		</div>
 	</div>
 </div>

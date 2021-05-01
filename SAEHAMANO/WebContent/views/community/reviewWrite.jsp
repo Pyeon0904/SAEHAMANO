@@ -75,6 +75,7 @@
 	/* ----- 페이지 설명(국보문화재 관람 후기를 남겨~~~)*/
 	.pageExplain {
 		color: wheat;
+		font-family: GmarketSansLight;
 	}
 	
 	/*-----------------------------------------------------------------------------------*/
@@ -88,29 +89,33 @@
 		outline-color: wheat;
 		position: relative; /*z-index 사용해서 배치 앞으로 하기 위해 작성*/
 		z-index: 8;
+		font-family: GmarketSansLight;
 	}
 	
 	/* 말풍선 -----------------------------------------------------*/
 	
 	/* 말풍선 (질문제목) */
 	.boardballoonTitle {
-		margin-top: 110px;
-		margin-left: 100px;
+		margin-top: 150px;
+		margin-left: 90px;
 		position: relative;
+		font-family: GmarketSansLight;
 	}
 	
 	/* 말풍선 (유저정보) */
 	.boardballoonUser {
-		margin-top: -150px;
+		margin-top: -500px;
 		margin-left: 1250px;
 		position: relative;
+		font-family: GmarketSansLight;
 	}
 	
 	/* 말풍선 내부 "작성 TIP" */
-	#titleWriteTip, #userWriteTip {
+	#titleWriteTip, #userWriteTip #writeTip{
 		color: green;
 		font-weight: 1200;
 		position: relative;
+		font-family: GmarketSansLight;
 	}
 	
 	/*------------------------------------------------------------*/
@@ -118,9 +123,10 @@
 	/* 작성 TABLE -------------------------------------------------*/
 	/* 테이블 상단 영역 */
 	.reviewTitleArea {
-		margin-top: -360px;
+		margin-top: -520px;
 		margin-left: 420px;
 		height: 10px;
+		font-family: GmarketSansLight;
 	}
 	
 	/* dropdown 너비 */
@@ -155,6 +161,7 @@
 		border: 1px solid;
 		padding: 5px 0;
 		text-align: center;
+		font-family: GmarketSansLight;
 	}
 	
 	/* 테이블 td에 대한 스타일 지정 */
@@ -162,6 +169,7 @@
 		border: 1px solid;
 		padding: 5px 0 5px 10px;
 		text-align: left;
+		font-family: GmarketSansLight;
 	}
 	/*------------------------------------------------------------*/
 	
@@ -191,10 +199,10 @@
 				<!-- 말풍선 구현 ---------------------------------------------------------- -->
 				<!-- '질문' 말풍선 + 내부에 text(글) 넣기 구현 -->
 				<div style="position: relative;">
-					<img class="boardballoonTitle"
+					<img class="boardballoonTitle" style="width:330px; height:450px;"
 						src="<%=request.getContextPath() %>/resources/images/boardBalloonTitle.png">
 					<div
-						style="left: 125px; width: 450px; bottom: 30px; font-size: 1.0em; font-weight: bold; position: absolute;">
+						style="left: 160px; width: 450px; bottom: 110px; font-size: 1.0em; font-weight: bold; position: absolute;">
 						<p id="titleWriteTip">작성 TIP</p>
 						정확한 답변을 원하시나요?<br> 궁금한 점을 상세하게<br> 알 수 있도록 작성해 보세요!<br>
 						(최소 5자)<br> <br>
@@ -205,10 +213,10 @@
 
 				<!-- '유저정보(닉네임,비밀번호)' 말풍선 + 내부에 text(글) 넣기 구현 -->
 				<div style="position: relative;">
-					<img class="boardballoonUser"
+					<img class="boardballoonUser" style="width:480px; height:330px;"
 						src="<%=request.getContextPath() %>/resources/images/boardBalloonUser.png">
 					<div
-						style="left: 1295px; width: 450px; bottom: 30px; font-size: 1.0em; font-weight: bold; position: absolute;">
+						style="left: 1345px; width: 450px; bottom: 100px; font-size: 1.0em; font-weight: bold; position: absolute;">
 						<p id="userWriteTip">작성 TIP</p>
 						닉네임은 '작성자'에 사용됩니다.<br> 패스워드는 글을 수정, 삭제시 사용됩니다.<br> 계정정보를
 						잊지 않도록 유의해주세요!<br> <br>
@@ -233,7 +241,7 @@
 							<tr>
 								<th>분류</th>
 								<td>
-								<select name="cul_name" id="culture">
+								<select name="cul_name" id="culture" required>
 										<option value="" selected>문화재명</option>
 
 								</select> 

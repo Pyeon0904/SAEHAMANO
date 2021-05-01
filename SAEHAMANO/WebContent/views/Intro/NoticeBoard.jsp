@@ -142,8 +142,18 @@ div#pageBar {
 						<%=notice.getNotice_name()%>
 					</a>
 					</td>
-					<td>-</td>
-					<td><%=notice.getNotice_writer()%></td>
+					<td>
+	                  <%
+	                  if(notice.getOriginal_filename() != null && !notice.getOriginal_filename().equals("null")) {
+	                  %>
+	                  <img src="<%= request.getContextPath() %>/resources/images/filedown.png" width="20" height="20"/> 
+	                  <% } else { %> 
+	                     <span> - </span> 
+	                  <%
+	                      }
+	                  %>
+               		</td>
+					<td>관리자</td>
 					<td><%=notice.getWrite_date()%></td>
 					<td><%=notice.getNotice_views()%></td>
 				</tr>

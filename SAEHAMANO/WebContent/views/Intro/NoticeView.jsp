@@ -125,13 +125,33 @@ text-align:right;
 						<th>글번호</th>
 						<td><%= notice.getRowNum() %></td>
 						<th>작성자</th>
-						<td><%= notice.getNotice_writer() %></td>
+						<td>관리자</td>
 						<th>조회수</th>
 						<td><%= notice.getNotice_views() %></td>
 					</tr>
 					<tr>
 						<th>첨부파일</th>
-						<td colspan="5">첨부파일 영역 </td>
+						<td colspan="5">
+		                  <% if(notice.getOriginal_filename() != null && !notice.getOriginal_filename().equals("null")){ %>
+		                     <a href="javascript:fileDownload('<%= notice.getOriginal_filename() %>', '<%= notice.getRenamed_filename() %>')">
+		                        <%= notice.getOriginal_filename() %>
+		                     </a>
+		                     <script>
+		                        function fileDownload(oriname, rename){
+		                           const url ="<%= request.getContextPath()%>/Notice/fileDown";
+		                           
+		                           let oName = encodeURIComponent(oriname);
+		                           let rName = encodeURIComponent(rename);
+		                           
+		                           console.log(oName, rName);
+		                           
+		                           location.assign(url + "?oriname=" + oName + "&rename=" + rName);
+		                        }
+		                     </script>
+		                     <% } else { %>
+		                        <span>-</span>
+		                     <% } %>
+	                  </td>
 					</tr>
 					<tr>
 					<!-- 내용 -->
