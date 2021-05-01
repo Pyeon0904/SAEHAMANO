@@ -12,8 +12,8 @@
 
 
 <%
-	List<Event> list = (ArrayList) request.getAttribute("list");	
-	PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
+   List<Event> list = (ArrayList) request.getAttribute("list");   
+   PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
 %>
 
 
@@ -38,141 +38,164 @@
 }
 /*제일 바탕 영역 설정*/
 #box{ 
-	background-color:#2a1b0a;
-	width:100%;
-	height:850px; /*높이는 각 세부페이지 컨텐츠 보고 알아서 적~당히 설정하기*/
-	margin-top:330px;
-	margin-bottom:100px;
-	margin-left:-10px;
-	padding:10px;
-}	
+   background-color:#2a1b0a;
+   width:100%;
+   height:850px; /*높이는 각 세부페이지 컨텐츠 보고 알아서 적~당히 설정하기*/
+   margin-top:330px;
+   margin-bottom:100px;
+   margin-left:-10px;
+   padding:10px;
+}   
 /*컨텐츠 영역*/
 #conbox{
-	
-	 width:1000px; /*각자 컨텐츠에 맞춰서 가로사이즈 지정하세요,.*/
-	 position:relative;
-	 top:0px;
-	 margin:auto;
+   
+    width:1000px; /*각자 컨텐츠에 맞춰서 가로사이즈 지정하세요,.*/
+    position:relative;
+    top:0px;
+    margin:auto;
 }
 /*해당 페이지 제목*/
 #title{ margin-top:50px; margin-bottom:20px; font-family: 'GmarketSansMedium'; font-size:25pt; text-align:center; color:white;}
 /* 행사소개 틀 */
 .festivalinfo{ width:300px; height:300px; margin:10px; border:2px solid white; background-color:white;
-	position:relative;
-	float:left;
-	
+   position:relative;
+   float:left;
+   
 }
 .festivalinfo a{ text-decoration:none; color:#2a1b0a; }
 /*페이지 버튼*/
 #pageBar{ width:1000px; text-align:center; margin:700px 0px 10px 0px; }
 #pageBar button {
  font-family: 'GmarketSansMedium';
-	font-size: 15px;
-	width: 25px; height: 25px;
-	margin: 0px 3px;
-	background:none;
-	border : none;
-	color:white;
+   font-size: 15px;
+   width: 25px; height: 25px;
+   margin: 0px 3px;
+   background:none;
+   border : none;
+   color:white;
 }
 /*번호 선택 스타일*/
 #pageBar button:disabled{
-	border-bottom:2px solid wheat;
-	color:wheat;
+   border-bottom:2px solid wheat;
+   color:wheat;
 }
 /*불러올 축제 이미지*/
-.img{ width:280px; height:200px; margin:10px; overflow:hidden;	}
+.img{ width:280px; height:200px; margin:10px; overflow:hidden;   }
 /*불러올 축제이름 및 기간*/
 #festitle{ text-decoration:none; width:280px; height:25px; margin:15px 0px 7px 12px; overflow:hidden;
-			font-family: 'GmarketSansLight'; font-size:13pt; }
+         font-family: 'GmarketSansLight'; font-size:13pt; }
 #fesdate{ width:280px; height:30px; margin-top:0px; margin-left:13px; 
-			font-family: 'GmarketSansLight'; font-size:7pt; }
+         font-family: 'GmarketSansLight'; font-size:7pt; }
 </style>
 <section>
 <!-- 겉 제일 큰 박스  -->
-	<div id="box">
+   <div id="box">
 <!-- 컨텐츠 박스 -->
-	<div id="conbox">
+   <div id="conbox">
 <!-- 해당 페이지 제목 -->
-		<div id="title">
-			<span>한국의 축제</span>
-		</div>
-		<% if(list.isEmpty()){%>
-			<p>조회된 게시글이없습니다</p>
-		<% } else{
-			for(Event event : list){%>
-		
-	
+      <div id="title">
+         <span>한국의 축제</span>
+      </div>
+      <% if(list.isEmpty()){%>
+         <p>조회된 게시글이없습니다</p>
+      <% } else{
+         for(Event event : list){%>
+      
+   
 <!-- 축제 1번 박스  -->
-		<div class="festivalinfo">
-		<a href="<%= request.getContextPath() %>/event/viewEvent?event_no=<%=event.getEvent_no()%>">
-			<div class="img">
-				<img src="<%= event.getEvent_img()%>" width="280"/>
-			</div>
-			<div>
-				<p id="festitle">
-					<%=event.getEvent_name() %>
-				</p>
-				<p id="fesdate">
-	<%
-	//start_date 형변환
-		String event_start_date = event.getEvent_start_date();
-		SimpleDateFormat dfFormat = new SimpleDateFormat("yyyyMMdd");
-	
-		Date formatDate = dfFormat.parse(event_start_date); 
-	
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
-		String start = sdf.format(formatDate);
-		
-		
-	//last_date형변환
-		String event_last_date = event.getEvent_last_date();
-		SimpleDateFormat dfFormat2 = new SimpleDateFormat("yyyyMMdd");
-	
-		Date formatDate2 = dfFormat2.parse(event_last_date); 
-	
-		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy년 MM월 dd일");
-		String last = sdf2.format(formatDate2);	
-		
-	%>
+      <div class="festivalinfo">
+      <a href="<%= request.getContextPath() %>/event/viewEvent?event_no=<%=event.getEvent_no()%>">
+      
+      <% if( event.getEvent_img() != null){ %>
+         <div class="img">
+            <img src="<%= event.getEvent_img()%>" width="280"/>
+         </div>
+         <% }else{ %>
+            <div class="img">
+            <img src="javascript:fileDownload('<%= event.getOriginal_FileName() %>', '<%= event.getRenamed_FileName() %>')" width="280"/>
+            <script>
+               function fileDownload(oriname, rename) {
+                  const url = "<%= request.getContextPath() %>/event/file";
+                     
+                     //아스키문자 (a~z, A~Z, 1~9, .-_ ...)그대로 전달하고 기타 문자만 %XX(유니코드값)와 같이 변환된다.
+                     let oName = encodeURIComponent(oriname);
+                     let rName = encodeURIComponent(rename);
+                     
+                     console.log(oName, rName);
+
+                     location.assign(url + "?oriname=" + oName + "&rename="+ rName);
+                     
+                  }
+               </script>
+         </div>
+         <% } %>
+         <div>
+            <p id="festitle">
+               <%=event.getEvent_name() %>
+            </p>
+            <p id="fesdate">
+   <%
+   //start_date 형변환
+      String event_start_date = event.getEvent_start_date();
+      SimpleDateFormat dfFormat = new SimpleDateFormat("yyyyMMdd");
+   
+      Date formatDate = dfFormat.parse(event_start_date); 
+   
+      SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
+      String start = sdf.format(formatDate);
+      
+      
+   //last_date형변환
+      String event_last_date = event.getEvent_last_date();
+      SimpleDateFormat dfFormat2 = new SimpleDateFormat("yyyyMMdd");
+   
+      Date formatDate2 = dfFormat2.parse(event_last_date); 
+   
+      SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy년 MM월 dd일");
+      String last = sdf2.format(formatDate2);   
+      
+   %>
 <%= start %> ~ <%= last %>
 
-				</p>
-				
-			</div>
-			</a>
-		</div>	
-		<% }
-		}
-		%>
-	
-			
+            </p>
+            
+         </div>
+         </a>
+      </div>   
+      <% }
+      }
+      %>
+   
+         
 
-<!-- 페이지 넘버 버튼 -->	
-		<div id="pageBar">
-			<!-- 맨 처음으로 -->
-			<button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=1'">&lt;&lt;</button>
-			
-			<!-- 이전 페이지로 -->
-			<button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=<%= pageInfo.getPrvePage() %>'">&lt;</button>
+<!-- 페이지 넘버 버튼 -->   
+      <div id="pageBar">
+         <!-- 맨 처음으로 -->
+         <button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=1'">&lt;&lt;</button>
+         
+         <!-- 이전 페이지로 -->
+         <button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=<%= pageInfo.getPrvePage() %>'">&lt;</button>
 
-			<!--  10개 페이지 목록 -->
-			
-		<% for(int p= pageInfo.getStartPage(); p <= pageInfo.getEndPage(); p++) {%>
-				<%if(p==pageInfo.getCurrentPage()){ %>
-					<button disabled><%= p %></button>
-				<%} else{ %>
-					<button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=<%= p %>'"><%= p %></button>
-				<%} %>
-			<% } %>
-			<!-- 다음 페이지로 -->
-			<button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=<%= pageInfo.getNextPage() %>'">&gt;</button>
-			
-			<!-- 맨 끝으로 -->
-			<button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=<%= pageInfo.getMaxPage() %>'">&gt;&gt;</button>
-		</div>
-		</div>
-		
-	</div>
+         <!--  10개 페이지 목록 -->
+         
+      <% for(int p= pageInfo.getStartPage(); p <= pageInfo.getEndPage(); p++) {%>
+            <%if(p==pageInfo.getCurrentPage()){ %>
+               <button disabled><%= p %></button>
+            <%} else{ %>
+               <button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=<%= p %>'"><%= p %></button>
+               
+               
+            <%} %>
+         <% } %>
+         <!-- 다음 페이지로 -->
+         <button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=<%= pageInfo.getNextPage() %>'">&gt;</button>
+         
+         <!-- 맨 끝으로 -->
+         <button onclick="location.href='<%= request.getContextPath()%>/event/eventschedule?page=<%= pageInfo.getMaxPage() %>'">&gt;&gt;</button>
+      </div>
+      </div>
+      
+   </div>
 
 </section>
 

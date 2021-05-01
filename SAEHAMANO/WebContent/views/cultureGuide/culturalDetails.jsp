@@ -148,15 +148,15 @@ div.fotorama {float:left;   margin:0 auto;}
                      <span> - </span><br>
                <% } %>
                <%
-		         //start_date 형변환
-		      String deg_date = culture.getDeg_date();
-		      SimpleDateFormat dfFormat = new SimpleDateFormat("yyyy-MM-dd");
-		   	  
-		      Date formatDate = dfFormat.parse(deg_date); 
-		   
-		      SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
-		      String cul_deg_dage = sdf.format(formatDate);
-		      %>
+         //start_date 형변환
+      String deg_date = culture.getDeg_date();
+      SimpleDateFormat dfFormat = new SimpleDateFormat("yyyy-MM-dd");
+   
+      Date formatDate = dfFormat.parse(deg_date); 
+   
+      SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
+      String cul_deg_dage = sdf.format(formatDate);
+      %>
                <span class="cul-summary">지정일&nbsp;&nbsp; </span>
                <% if(culture.getDeg_date() != null) {%>
                      <span><%= cul_deg_dage %></span><br>

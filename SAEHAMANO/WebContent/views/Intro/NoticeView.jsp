@@ -165,11 +165,7 @@ text-align:right;
 				</table>
 			</div>
 			
-					<div id="btn-list">
-						<div class="btn-list">
-						<button type="button" onclick="location.href='<%= request.getContextPath() %>/Intro/NoticeBoard'" >목록으로</button>
-						</div>
-					</div>
+					
 		</form>
 	</div>
 </section>
