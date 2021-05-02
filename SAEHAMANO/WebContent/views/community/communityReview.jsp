@@ -26,6 +26,10 @@
       <script src="<%= request.getContextPath() %>/resources/js/jquery-3.6.0.min.js"></script>
       
       <style>
+         /*하이퍼링크 스타일*/
+			a { text-decoration:none }
+			td>a:link { color:white; } /*방문안한 페이지 글자색*/
+			td>a:visited { color:wheat; } /*방문한 페이지 글자색*/
          /* 전체 영역 -------------------------------------------------*/
             /*---------------제일 바깥 영역 설정-----------------*/
             #box{ 

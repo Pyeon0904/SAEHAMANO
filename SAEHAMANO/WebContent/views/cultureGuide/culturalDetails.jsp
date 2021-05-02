@@ -150,7 +150,7 @@ div.fotorama {float:left;   margin:0 auto;}
                <%
          //start_date 형변환
       String deg_date = culture.getDeg_date();
-      SimpleDateFormat dfFormat = new SimpleDateFormat("yyyy-MM-dd");
+      SimpleDateFormat dfFormat = new SimpleDateFormat("yy/MM/dd");
    
       Date formatDate = dfFormat.parse(deg_date); 
    

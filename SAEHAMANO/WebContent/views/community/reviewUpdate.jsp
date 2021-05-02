@@ -85,23 +85,26 @@
 
 /* 말풍선 (질문제목) */
 .boardballoonTitle {
-   margin-top: 110px;
-   margin-left: 100px;
+   margin-top: 150px;
+   margin-left: 50px;
    position: relative;
+   font-family: GmarketSansLight;
 }
 
 /* 말풍선 (유저정보) */
 .boardballoonUser {
-   margin-top: -150px;
-   margin-left: 1250px;
-   position: relative;
+    margin-top: -500px;
+	margin-left: 1225px;
+	position: relative;
+	font-family: GmarketSansLight;
 }
 
 /* 말풍선 내부 "작성 TIP" */
 #titleWriteTip, #userWriteTip {
-   color: green;
-   font-weight: 1200;
-   position: relative;
+   		color: green;
+		font-weight: 1200;
+		position: relative;
+		font-family: GmarketSansLight;
 }
 
 /*------------------------------------------------------------*/
@@ -109,14 +112,15 @@
 /* 작성 TABLE -------------------------------------------------*/
 /* 테이블 상단 영역 */
 .reviewTitleArea {
-   margin-top: -360px;
-   margin-left: 420px;
-   height: 10px;
+		margin-top: -520px;
+		margin-left: 420px;
+		height: 10px;
+		font-family: GmarketSansLight;
 }
 
 /* dropdown 너비 */
 #cultureName {
-   width: 200px;
+   width: 400px;
 }
 
 div#board-write-container {
@@ -146,6 +150,7 @@ table#tbl-board {
    border: 1px solid;
    padding: 5px 0;
    text-align: center;
+   font-family: GmarketSansLight;
 }
 
 /* 테이블 td에 대한 스타일 지정 */
@@ -153,6 +158,7 @@ table#tbl-board {
    border: 1px solid;
    padding: 5px 0 5px 10px;
    text-align: left;
+   font-family: GmarketSansLight;
 }
 /*------------------------------------------------------------*/
 
@@ -170,7 +176,7 @@ input:hover {
 
             <!-- 상단의 TEXT 구현 ---------------------------------------------------------- -->
             <div class="pageName">
-               <h1>후기작성 게시판</h1>
+               <h1>후기 수정 페이지</h1>
                <hr>
                <h3 class="pageExplain">국보 문화재 관람 후기를 남겨 다른 방문객들에게 도움이 되어주세요!</h3>
             </div>
@@ -179,11 +185,11 @@ input:hover {
             <!-- 말풍선 구현 ---------------------------------------------------------- -->
             <!-- '질문' 말풍선 + 내부에 text(글) 넣기 구현 -->
             <div style="position: relative;">
-               <img class="boardballoonTitle"
+               <img class="boardballoonTitle" style="width:330px; height:450px;"
                   src="<%=request.getContextPath()%>/resources/images/boardBalloonTitle.png">
                <div
-                  style="left: 125px; width: 450px; bottom: 30px; font-size: 1.0em; font-weight: bold; position: absolute;">
-                  <p id="titleWriteTip">작성 TIP</p>
+                  style="left: 120px; width: 450px; bottom: 110px; font-size: 12pt; font-weight: bold; font-family: GmarketSansLight; position: absolute;">
+						<p id="titleWriteTip">작성 TIP</p>
                   정확한 답변을 원하시나요?<br> 궁금한 점을 상세하게<br> 알 수 있도록 작성해 보세요!<br>
                   (최소 5자)<br> <br>
                   <p id="writeTip">예시문</p>
@@ -193,11 +199,11 @@ input:hover {
 
             <!-- '유저정보(닉네임,비밀번호)' 말풍선 + 내부에 text(글) 넣기 구현 -->
             <div style="position: relative;">
-               <img class="boardballoonUser"
+               <img class="boardballoonUser" style="width:480px; height:330px;"
                   src="<%=request.getContextPath()%>/resources/images/boardBalloonUser.png">
                <div
-                  style="left: 1295px; width: 450px; bottom: 30px; font-size: 1.0em; font-weight: bold; position: absolute;">
-                  <p id="userWriteTip">작성 TIP</p>
+					style="left: 1325px; width: 450px; bottom: 100px; font-size: 12pt; font-weight: bold; font-family: GmarketSansLight; position: absolute;">
+					<p id="userWriteTip">작성 TIP</p>
                   닉네임은 '작성자'에 사용됩니다.<br> 패스워드는 글을 수정, 삭제시 사용됩니다.<br> 계정정보를
                   잊지 않도록 유의해주세요!<br> <br>
                </div>
@@ -211,9 +217,11 @@ input:hover {
                
                <div class="reviewTitleArea">
                      <h2>
-                        <label>제목 <input type="text" id="title" name="title"
-                           maxlength="80" value="<%=review.getRe_name()%>"></label>
-                     </h2>
+						<label style="color: wheat; font-family: GmarketSansLight;">&nbsp;&nbsp;&emsp;제목&nbsp;&emsp;
+							<input type="text" id="title" style="font-family: GmarketSansMedium; maxlength:80;" value="<%=review.getRe_name()%> "name="title">
+						</label>
+					</h2>
+                    
 
                      <table id='tbl-board'>
                         <tr>
@@ -271,11 +279,11 @@ input:hover {
                         </tr>
                         <tr>
                            <th colspan="2"><input type="submit" value="등록"> 
-                           <button type="button" onclick="location.href='<%=request.getContextPath()%>/community/review'">취소</button>
-                           <button type="button" id="btnDelete" style="color: #2a1b0a;">삭제</button>
+                           <button type="button" style="font-family: GmarketSansMedium;" onclick="location.href='<%=request.getContextPath()%>/community/review'">취소</button>
+                           <button type="button" id="btnDelete" style="color: #2a1b0a; font-family: GmarketSansMedium;">삭제</button>
                         </tr>
                      </table>
-                     <h5 style="color: #696666">저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는
+                     <h5 style="color: #696666; font-family: GmarketSansLight">저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는
                         게시물은 관련법률에 의해 제재를 받으실 수 있습니다.</h5>
                   </div>
             </form>

@@ -97,7 +97,7 @@
 	/* 말풍선 (질문제목) */
 	.boardballoonTitle {
 		margin-top: 150px;
-		margin-left: 90px;
+		margin-left: 50px;
 		position: relative;
 		font-family: GmarketSansLight;
 	}
@@ -105,13 +105,13 @@
 	/* 말풍선 (유저정보) */
 	.boardballoonUser {
 		margin-top: -500px;
-		margin-left: 1250px;
+		margin-left: 1225px;
 		position: relative;
 		font-family: GmarketSansLight;
 	}
 	
 	/* 말풍선 내부 "작성 TIP" */
-	#titleWriteTip, #userWriteTip #writeTip{
+	#titleWriteTip, #userWriteTip, #writeTip, #boardballoonUser {
 		color: green;
 		font-weight: 1200;
 		position: relative;
@@ -202,7 +202,7 @@
 					<img class="boardballoonTitle" style="width:330px; height:450px;"
 						src="<%=request.getContextPath() %>/resources/images/boardBalloonTitle.png">
 					<div
-						style="left: 160px; width: 450px; bottom: 110px; font-size: 1.0em; font-weight: bold; position: absolute;">
+						style="left: 120px; width: 450px; bottom: 110px; font-size: 12pt; font-weight: bold; font-family: GmarketSansLight; position: absolute;">
 						<p id="titleWriteTip">작성 TIP</p>
 						정확한 답변을 원하시나요?<br> 궁금한 점을 상세하게<br> 알 수 있도록 작성해 보세요!<br>
 						(최소 5자)<br> <br>
@@ -216,7 +216,7 @@
 					<img class="boardballoonUser" style="width:480px; height:330px;"
 						src="<%=request.getContextPath() %>/resources/images/boardBalloonUser.png">
 					<div
-						style="left: 1345px; width: 450px; bottom: 100px; font-size: 1.0em; font-weight: bold; position: absolute;">
+						style="left: 1325px; width: 450px; bottom: 100px; font-size: 12pt; font-weight: bold; font-family: GmarketSansLight; position: absolute;">
 						<p id="userWriteTip">작성 TIP</p>
 						닉네임은 '작성자'에 사용됩니다.<br> 패스워드는 글을 수정, 삭제시 사용됩니다.<br> 계정정보를
 						잊지 않도록 유의해주세요!<br> <br>
@@ -229,8 +229,8 @@
 				<form action="<%=request.getContextPath()%>/community/review/write" method="POST" enctype="multipart/form-data">
 					<div class="reviewTitleArea">
 						<h2>
-							<label style="color: wheat">&nbsp;&nbsp;&emsp;제목&nbsp;&emsp;
-								<input type="text" id="title" maxlength="80" name="title"
+							<label style="color: wheat; font-family: GmarketSansLight;">&nbsp;&nbsp;&emsp;제목&nbsp;&emsp;
+								<input type="text" id="title" style="font-family: GmarketSansMedium;"maxlength="80" name="title"
 								placeholder="최대 80자까지 입력 가능합니다.">
 							</label>
 						</h2>
@@ -241,7 +241,7 @@
 							<tr>
 								<th>분류</th>
 								<td>
-								<select name="cul_name" id="culture" required>
+								<select name="cul_name" id="culture"  required>
 										<option value="" selected>문화재명</option>
 
 								</select> 
@@ -261,9 +261,9 @@
 								<th>작성자</th>
 								<td>
 									<!-- &nbsp; : 스페이스 / &ensp; : 스페이스 / &emsp; : 큰스페이스 --> 사용할 닉네임
-									&emsp;: <input type="text" style="width: 300px" name="writer"
+									&emsp;: <input type="text" style="width: 300px; font-family: GmarketSansMedium;" name="writer"
 									placeholder="사용할 닉네임을 적어주세요."><br> 사용할 비밀번호 : <input
-									type="password" style="width: 300px" name="password"
+									type="password" style="width: 300px; font-family: GmarketSansMedium;" name="password" 
 									placeholder="사용할 비밀번호를 적어주세요.">
 								</td>
 							</tr>
@@ -284,7 +284,7 @@
 							<tr>
 								<th>내용</th>
 								<td><textarea name="content"
-										style="width: 650px; resize: none;"
+										style="width: 650px; resize: none; font-family: GmarketSansMedium;" 
 										placeholder=" 국보문화재 관람 후기를 공유해 주세요.&#13;&#10;&#13;&#10;  
 										&#13;&#10 후기글 작성시 아래와 같은 사항을 주의해 주세요!
 										&#13;&#10; - 게시글 작성 에티켓 문화를 실천해주세요.
@@ -294,13 +294,13 @@
 										cols="60" rows="20" style="resize: none"></textarea></td>
 							</tr>
 							<tr>
-								<th colspan="2"><input type="submit" value="등록"> 
-								<button type="button" onclick="location.href='<%=request.getContextPath()%>/community/review'">취소</button>
+								<th colspan="2"><input type="submit" style="font-family: GmarketSansMedium;" value="등록"> 
+								<button type="button" style="font-family: GmarketSansMedium;" onclick="location.href='<%=request.getContextPath()%>/community/review'">취소</button>
 							</tr>
 						</table>
 						<!---------------------------------------------------------------------------------->
 
-						<h5 style="color: #696666">저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는
+						<h5 style="color: #696666; font-family: GmarketSansLight">저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는
 							게시물은 관련법률에 의해 제재를 받으실 수 있습니다.</h5>
 					</div>
 				</form>
