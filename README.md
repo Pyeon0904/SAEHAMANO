@@ -13,7 +13,7 @@
 
 ### 사용 기술
 - Development Tool
-  Java Oracle, VsCode, Eclipse
+Java Oracle, VsCode, Eclipse
 
 <Language>
   HTML, Css, JS, JSP, JQuery Servlet
