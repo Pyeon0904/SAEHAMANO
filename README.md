@@ -16,27 +16,27 @@
 
 ### 사용 기술
 #### Development Tool <br/>
-Java Oracle, VsCode, Eclipse
+  Java Oracle, VsCode, Eclipse
 
 #### Language <br/>
   HTML, Css, JS, JSP, JQuery Servlet
 
-<OS>
+#### OS <br/>
   Window10
   
-<Server>
+#### Server <br/>
   Tomcat
   
-<DBMS>
+#### DBMS <br/>
   Sqldeveloper
   
-<SCM>
+#### SCM <br/>
   Github, Sourcetree
   
-<Map>
+#### Map <br/>
   Naver Map
   
-<Graphics>
+#### Graphics <br/>
   indesign, Photoshop, illustration
 ***
   
@@ -44,11 +44,20 @@ Java Oracle, VsCode, Eclipse
 
 ***
 
+### 관리자페이지 UI/UX
+
+
 ### Developer
 
 #### 편준장 (총괄팀장) jjp2548@gmail.com
-- 
-#### 이재용 (DB 팀장)
-#### 김하린 (구현 팀장)
-#### 김예원 (통신 팀장)
-#### 조한결 (디자인 팀장)
+- FrontEnd & BackEnd
+#### 이재용 (DB 팀장) voshallr2@gmail.com
+- BackEnd : DB
+#### 김하린 (구현 팀장) harinjuly@gmail.com
+- FrontEnd : UI/UX
+- Design
+#### 김예원 (통신 팀장) ywkim0822@naver.com
+- BackEnd : DB
+#### 조한결 (디자인 팀장) ruf092114@gmail.com
+- FrontEnd : UI/UX
+- Design
