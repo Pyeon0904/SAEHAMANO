@@ -41,7 +41,7 @@
 ***
   
 ### 사용자페이지 UI/UX
-<img src="README/main.png"></img> 
+<img src="community.png"></img> 
 
 ***
 
