@@ -44,8 +44,11 @@
 <img src="SAEHAMANO/WebContent/resources/images/readmeImage/Home.png"></img>
 ***
 <img src="SAEHAMANO/WebContent/resources/images/readmeImage/Intro.png"></img>
+***
 <img src="SAEHAMANO/WebContent/resources/images/readmeImage/culture.png"></img> 
+***
 <img src="SAEHAMANO/WebContent/resources/images/readmeImage/festival.png"></img> 
+***
 <img src="SAEHAMANO/WebContent/resources/images/readmeImage/community.png"></img> 
 ***
 
