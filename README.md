@@ -41,7 +41,7 @@
 ***
   
 ### 사용자페이지 UI/UX
-<img src="WebContent/resources/images/readmeImage/community.png"></img> 
+<img src="resources/images/readmeImage/community.png"></img> 
 
 
 ***
