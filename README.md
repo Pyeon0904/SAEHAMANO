@@ -60,3 +60,13 @@
 - BackEnd
 #### 조한결 (디자인 팀장) ruf092114@gmail.com
 - FrontEnd / Design
+
+***
+
+### Git
+SAHAMANO (User)
+- https://github.com/Pyeon0904/SAEHAMANO
+
+SAHAMANO_MANAGE (admin)
+- https://github.com/Pyeon0904/SAEHAMANO_MANAGE
+
