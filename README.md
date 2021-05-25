@@ -41,7 +41,7 @@
 ***
   
 ### 사용자페이지 UI/UX
-<img src="resources/images/readmeImage/community.png"></img> 
+<img src="SAEHAMANO/WebContent/resources/images/readmeImage/community.png"></img> 
 
 
 ***
