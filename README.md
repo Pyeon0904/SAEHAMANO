@@ -64,9 +64,9 @@
 ***
 
 ### Git
-SAHAMANO (User)
+SAEHAMANO (User)
 - https://github.com/Pyeon0904/SAEHAMANO
 
-SAHAMANO_MANAGE (admin)
+SAEHAMANO_MANAGE (admin)
 - https://github.com/Pyeon0904/SAEHAMANO_MANAGE
 
