@@ -12,7 +12,7 @@
 
 
 ### 사용 기술
-<Development Tool>
+- Development Tool
   Java Oracle, VsCode, Eclipse
 
 <Language>
