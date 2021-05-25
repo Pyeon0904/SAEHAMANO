@@ -41,12 +41,9 @@
 ***
   
 ### 사용자페이지 UI/UX
-<img src="community.png"></img> 
+<img src="WebContent/resources/images/readmeImage/community.png"></img> 
 
-***
 
-### 관리자페이지 UI/UX
-<img src="README/main.png"></img> 
 ***
 
 ### Developer
