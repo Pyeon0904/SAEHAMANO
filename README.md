@@ -52,12 +52,10 @@
 #### 편준장 (총괄팀장) jjp2548@gmail.com
 - FrontEnd & BackEnd
 #### 이재용 (DB 팀장) voshallr2@gmail.com
-- BackEnd : DB
+- BackEnd
 #### 김하린 (구현 팀장) harinjuly@gmail.com
-- FrontEnd : UI/UX
-- Design
+- FrontEnd / Design
 #### 김예원 (통신 팀장) ywkim0822@naver.com
-- BackEnd : DB
+- BackEnd
 #### 조한결 (디자인 팀장) ruf092114@gmail.com
-- FrontEnd : UI/UX
-- Design
+- FrontEnd / Design
