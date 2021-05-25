@@ -41,11 +41,12 @@
 ***
   
 ### 사용자페이지 UI/UX
+<img src="README/main.png"></img> 
 
 ***
 
 ### 관리자페이지 UI/UX
-
+<img src="README/main.png"></img> 
 ***
 
 ### Developer
