@@ -18,7 +18,7 @@
 #### Development Tool <br/>
 Java Oracle, VsCode, Eclipse
 
-<Language>
+#### Language <br/>
   HTML, Css, JS, JSP, JQuery Servlet
 
 <OS>
@@ -38,17 +38,17 @@ Java Oracle, VsCode, Eclipse
   
 <Graphics>
   indesign, Photoshop, illustration
----
+***
   
 ### 사용자페이지 UI/UX
 
----
+***
 
 ### Developer
 
-편준장 (총괄팀장) jjp2548@gmail.com
+#### 편준장 (총괄팀장) jjp2548@gmail.com
 - 
-이재용 (DB 팀장)
-김하린 (구현 팀장)
-김예원 (통신 팀장)
-조한결 (디자인 팀장)
+#### 이재용 (DB 팀장)
+#### 김하린 (구현 팀장)
+#### 김예원 (통신 팀장)
+#### 조한결 (디자인 팀장)
