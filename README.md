@@ -40,7 +40,7 @@
   indesign, Photoshop, illustration
 ***
   
-### 사용자페이지 UI/UX
+### UserPage UI/UX
 <img src="SAEHAMANO/WebContent/resources/images/readmeImage/Home.png"></img>
 ***
 <img src="SAEHAMANO/WebContent/resources/images/readmeImage/Intro.png"></img>
